@@ -1,0 +1,17 @@
+<!-- <p>hero-detail works!</p> -->
+
+<div *ngIf="hero">
+
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+      </label>
+    </div>
+  
+  </div>
+
+  <!-- [(ngModel)] 是 Angular 的双向数据绑定语法。
+这里把 hero.name 属性绑定到了 HTML 的 textbox 元素上，以便数据流可以双向流动：从 hero.name 属性流动到 textbox，并且从 textbox 流回到 hero.name。 -->
+  
