@@ -1,0 +1,15 @@
+<div id="search-component">
+    <h4><label for="search-box">Hero Search</label></h4>
+  
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+        <!-- *ngFor 会重复渲染这些英雄对象。注意，*ngFor 在一个名叫 heroes$ 的列表上迭代，而不是 heroes。
+            $ 是一个约定，表示 heroes$ 是一个 Observable 而不是数组。 -->
+      <li *ngFor="let hero of heroes$ | async" >
+        <a routerLink="/detail/{{hero.id}}">
+          {{hero.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
